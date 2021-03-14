@@ -18,7 +18,7 @@
               <el-input v-model="tForm.result"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="onSubmit('tForm')">转账</el-button>
+              <el-button type="primary" @click="onSubmit('tForm')">Mining</el-button>
               <el-button>取消</el-button>
             </el-form-item>
           </el-form>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import header from './common/header'
+  import header from './header'
   import JSEncrypt from 'jsencrypt';
   import CryptoJs from 'crypto-js';
   import Base64 from "crypto-js/enc-base64";
@@ -81,21 +81,21 @@
         _this.pow.sign = signature
         _this.pow.timestamp = _this.data.timestamp
         console.log(JSON.stringify(this.pow))
-        /* this.$http.post('/ledger/transfer', JSON.stringify(this.transfer), {headers: {'Content-Type': 'application/json'}}).then(response => {
-           if (response.data.code === 200) {
-             this.$message({
-               message: response.data.message,
-               type: 'success',
-               center: true
-             })
-           } else {
-             this.$message({
-               message: response.data.message,
-               type: 'error',
-               center: true
-             })
-           }
-         })*/
+        this.$http.post('/mining/pow', JSON.stringify(this.pow), {headers: {'Content-Type': 'application/json'}}).then(response => {
+          if (response.data.code === 200) {
+            this.$message({
+              message: response.data.msg,
+              type: 'success',
+              center: true
+            })
+          } else {
+            this.$message({
+              message: response.data.msg,
+              type: 'error',
+              center: true
+            })
+          }
+        })
       }
     },
     //进入页面后请求的初始数据
@@ -111,9 +111,11 @@
   .pow {
     height: 100%;
   }
-  .pow_main{
+
+  .pow_main {
     width: 100%;
   }
+
   .blog_card_title {
     font-size: 18px;
   }

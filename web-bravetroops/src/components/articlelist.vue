@@ -11,7 +11,7 @@
         </div>
         <div class="text item blog_card_text">
           <p class="blog_card_describes">账户：{{article.id}}</p>
-          <p class="blog_card_describes">余额：{{article.banlance}}</p>
+          <p class="blog_card_describes">余额：{{article.balance}}</p>
           <p class="blog_card_describes">创建时间：{{article.createAt}}</p>
         </div>
       </el-card>

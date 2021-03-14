@@ -15,7 +15,7 @@
               <el-input type="textarea" v-model="tForm.pri"></el-input>
             </el-form-item>
             <el-form-item label="转帐金额">
-              <el-input v-model="tForm.change"></el-input>
+              <el-input v-model.number="tForm.change" type="number"></el-input>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="onSubmit('tForm')">转账</el-button>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import header from './common/header'
+  import header from './header'
   import JSEncrypt from 'jsencrypt';
   import CryptoJs from 'crypto-js';
   import Base64 from "crypto-js/enc-base64";
@@ -84,13 +84,13 @@
         this.$http.post('/ledger/transfer', JSON.stringify(this.transfer), {headers: {'Content-Type': 'application/json'}}).then(response => {
           if (response.data.code === 200) {
             this.$message({
-              message: response.data.message,
+              message: response.data.msg,
               type: 'success',
               center: true
             })
           } else {
             this.$message({
-              message: response.data.message,
+              message: response.data.msg,
               type: 'error',
               center: true
             })

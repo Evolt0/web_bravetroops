@@ -5,7 +5,7 @@
       <router-view></router-view>
       <el-footer>
         <el-card class="box-card footer—card" shadow="none" style="height: auto;">
-          <h2><i class="el-icon-circle-plus"></i>Evolt0 Studio</h2>
+          <h2><i class="el-icon-info"></i>Evolt0 Studio</h2>
           <p>Copyright © 2021 V.1.5.0</p>
         </el-card>
       </el-footer>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import header from './common/header'
+  import header from './header'
 
   export default {
     data() {

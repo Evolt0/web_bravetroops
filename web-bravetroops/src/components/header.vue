@@ -25,7 +25,7 @@
     props: ['name'],
     data() {
       return {
-        show: true
+        show: true,
       };
     },
     methods: {

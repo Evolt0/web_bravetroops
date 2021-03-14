@@ -3,11 +3,11 @@
     <section class="container-1">
       <el-card class="box-card info_card" shadow="none">
         <div class="clearfix">
-          <span><h1>Studio</h1></span>
+          <span><h1>Evolt0 Studio</h1></span>
         </div>
         <div class="text item infocard_text">
-          <p>{{"学习交流"}}</p>
-          <p>{{"目前使用语言、框架及组件Java,GO，Spring Boot，GIN，Fabric，vue，element-ui"}}</p>
+          <p>{{"区块链基RSA货币安全交易实现"}}</p>
+          <p>{{"目前使用语言、框架及组件Go，GIN，Fabric，vue，element-ui"}}</p>
         </div>
       </el-card>
     </section>
