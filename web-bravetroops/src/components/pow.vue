@@ -6,10 +6,10 @@
         <div class="text item blog_card_text">
           <el-form ref="tForm" :model="tForm" label-width="80px">
             <el-form-item label="公钥">
-              <el-input type="textarea" v-model="tForm.pub"></el-input>
+              <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 9}" v-model="tForm.pub"></el-input>
             </el-form-item>
             <el-form-item label="私钥">
-              <el-input type="textarea" v-model="tForm.pri"></el-input>
+              <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 28}" v-model="tForm.pri"></el-input>
             </el-form-item>
             <el-form-item label="计算机结果hash">
               <el-input v-model="tForm.hash"></el-input>
@@ -88,12 +88,22 @@
               type: 'success',
               center: true
             })
+            setTimeout(() => {
+              _this.$router.push({
+                path: '/index/main/mining'
+              })
+            }, 1500)
           } else {
             this.$message({
               message: response.data.msg,
               type: 'error',
               center: true
             })
+            setTimeout(() => {
+              _this.$router.push({
+                path: '/pow'
+              })
+            }, 1500)
           }
         })
       }

@@ -10,10 +10,9 @@
         <div class="header_login header_right" v-show="show">
           <el-menu-item index="/register">注册</el-menu-item>
         </div>
-        <!-- <div class="header_user header_right"> -->
         <el-menu :default-active="$route.path" :router="true" class="el-menu-demo row header_user header_right"
                  mode="horizontal" menu-trigger="click" v-show="!show">
-          <el-tag> {{name}}</el-tag>
+          <el-button type="primary" icon="el-icon-user-solid">{{name}}</el-button>
         </el-menu>
       </el-menu>
     </el-header>

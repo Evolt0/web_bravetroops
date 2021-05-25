@@ -7,6 +7,12 @@
         <el-card class="box-card footer—card" shadow="none" style="height: auto;">
           <h2><i class="el-icon-info"></i>Evolt0 Studio</h2>
           <p>Copyright © 2021 V.1.5.0</p>
+          <div class="block">
+            <el-rate
+              v-model="value"
+              :colors="colors">
+            </el-rate>
+          </div>
         </el-card>
       </el-footer>
     </el-container>
@@ -15,25 +21,21 @@
 
 <script>
   import header from './header'
-
   export default {
     data() {
       return {
         name: '',
-        id: 0
+        id: 0,
+        value: null,
+        colors: ['#99A9BF', '#F7BA2A', '#FF9900']
       };
     },
     components: {
       "v-header": header,
     },
-    created() {
-      /*this.name = sessionStorage.getItem("name");
-        this.id = sessionStorage.getItem("id");*/
-    },
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .index {
     height: 100%;

@@ -49,7 +49,7 @@
           this.$notify({
             title: 'POW题目',
             dangerouslyUseHTMLString: true,
-            message: '前缀：' + that.target.prefix + '<br>零数：' + that.target.numZero,
+            message: '<b>前缀：' + that.target.prefix + '<br>零数：' + that.target.numZero + '</b>',
             type: 'success'
           });
         }, function (err) {
@@ -61,10 +61,7 @@
       key() {
         return this.$route.path + Math.random();
       }
-    }
-
-    //进入页面后请求的初始数据
-
+    },
   }
 </script>
 

@@ -7,7 +7,6 @@
         <span></span>
       </div>
     </header>
-
   </div>
 </template>
 
